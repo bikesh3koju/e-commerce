@@ -1,8 +1,14 @@
+@if (Auth::guest())
+    <li><a href="{{ route('login') }}">Login</a></li>
+    <li><a href="{{ route('register') }}">Register</a></li>
+@else
 <!DOCTYPE html>
-<html>
+<html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>AdminLTE 2 | Blank Page</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -26,6 +32,7 @@
     <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
 <!-- Site wrapper -->
 <div class="wrapper">
 
@@ -228,8 +235,20 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="../../index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                        <li><a href="../../index.html"><i class="fa fa-circle-o"></i></a></li>
                         <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Category</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="../../index.html"><i class="fa fa-circle-o"></i>Category Create</a></li>
+                        <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Category list</a></li>
                     </ul>
                 </li>
             </ul>
@@ -239,8 +258,8 @@
 
     <!-- =============================================== -->
 
-    @yield('home')
-    @yield('categoryCreate')
+    @yield('content')
+
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
@@ -461,3 +480,4 @@
 <script src="{{asset('admin/dist/js/'.'demo.js')}}"></script>
 </body>
 </html>
+@endif
