@@ -235,7 +235,6 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="../../index.html"><i class="fa fa-circle-o"></i></a></li>
                         <li><a href="../../index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
                     </ul>
                 </li>
@@ -247,8 +246,9 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="../../index.html"><i class="fa fa-circle-o"></i>Category Create</a></li>
-                        <li><a href="../../index2.html"><i class="fa fa-circle-o"></i>Category list</a></li>
+                        <li><a href="{{route('categoryCreate')}}"><i class="fa fa-circle-o"></i>Category Create</a></li>
+                        <li><a href="{{route('categoryList')}}"><i class="fa fa-circle-o"></i>Category list</a></li>
+                        <li><a href="{{route('categoryEdit')}}"><i class="fa fa-circle-o"></i>Category Edit</a></li>
                     </ul>
                 </li>
             </ul>
